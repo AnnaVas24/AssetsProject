@@ -9,8 +9,26 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        ZStack{
+            AppColor.background.color
+                .ignoresSafeArea()
+            VStack {
+                Text("Save tigers!")
+                    .font(AppFont.title.font)
+                    .foregroundColor(AppColor.titleColor.color)
+                Text("We love tigers")
+                    .font(AppFont.subtitle.font)
+                    .foregroundColor(AppColor.subtitleColor.color)
+                
+                AppImage.tiger.image
+                    .resizable()
+                    .frame(width: 200, height: 200)
+                AppImage.heart.image
+                    .resizable()
+                    .frame(width: 150, height: 150)
+                    .foregroundColor(AppColor.titleColor.color)
+            }
+        }
     }
 }
 
